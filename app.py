@@ -23,12 +23,6 @@ PARAM_FIELDS = [
 
 
 def modelparams_to_dict(mp: object) -> dict:
-    if hasattr(mp, "to_dict") and callable(mp.to_dict):
-        return mp.to_dict()
-
-    if is_dataclass(mp):
-        return asdict(mp)
-
     d = {}
     for k in PARAM_FIELDS:
         if hasattr(mp, k):
@@ -37,9 +31,6 @@ def modelparams_to_dict(mp: object) -> dict:
 
 
 def dict_to_modelparams(d: dict, mp: object) -> object:
-    if hasattr(mp, "from_dict") and callable(mp.from_dict):
-        return mp.from_dict(d)
-
     for k, v in d.items():
         if hasattr(mp, k):
             try:
