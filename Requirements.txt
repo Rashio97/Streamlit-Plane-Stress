@@ -1,0 +1,6 @@
+plotly
+calfem
+streamlit
+numpy
+pyvtk
+tabulate
