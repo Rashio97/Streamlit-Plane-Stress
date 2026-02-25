@@ -4,3 +4,6 @@ libxrender1
 libxext6
 libsm6
 libxcursor1
+libxinerama1
+libxi6
+libxft2
