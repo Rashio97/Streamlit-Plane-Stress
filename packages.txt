@@ -3,3 +3,4 @@ libgl1
 libxrender1
 libxext6
 libsm6
+libxcursor1
