@@ -75,37 +75,6 @@ class ModelParams:
 
         return g
 
-    # def save(self, filename='model_params.json'):
-    #     """Save model parameters to a JSON file."""
-    #     with open(filename, 'w') as file:
-    #         json.dump({
-    #             'version': self.version,
-    #             'E': self.E,
-    #             'nu': self.nu,
-    #             't': self.t,
-    #             'w': self.w,
-    #             'h': self.h,
-    #             'a': self.a,
-    #             'b': self.b,
-    #             'load_value': self.q,
-    #             'el_size_factor': self.el_size_factor,
-    #         }, file, indent=4)
-
-    # def load(self, filename='model_params.json'):
-    #     """Load model parameters from a JSON file."""
-    #     with open(filename, 'r') as file:
-    #         params = json.load(file)        
-    #         self.version = params['version']
-    #         self.E = params['E']
-    #         self.nu = params['nu']
-    #         self.t = params['t']
-    #         self.w = params['w']
-    #         self.h = params['h']
-    #         self.a = params['a']
-    #         self.b = params['b']
-    #         self.q = params['load_value']
-    #         self.el_size_factor = params['el_size_factor']
-
 
 
 class ModelResult:
@@ -372,12 +341,6 @@ class ModelReport:
                 )
             )
         ]
-        #element_data = np.zeros([len(self.model_result.edof),11])
-        #for i in range(len(self.model_result.edof)):
-        #    element_data[i,0]=i+1
-        #    element_data[i,1]=self.model_result.edof[i,1]/2
-        #    element_data[i,2]=self.model_result.edof[i,3]/2
-        #    element_data[i,3]=self.model_result.edof[i,5]/2
 
         self.add_text("\nResult per element:\n")
         self.add_text(tb.tabulate(element_data, headers=["El", "N1", "N2", "N3", "sig_xx [Pa]", "sig_yy [Pa]", "tau_xy [Pa]", "vMise [Pa]", "eps_xx [-]", "eps_yy [-]", "eps_xy [-]"], tablefmt="psql",)) #floatfmt=".2f"))
@@ -559,17 +522,3 @@ class ModelVisualization:
 
         return fig
 
-    # def close_all(self):
-    #     """Close all open visualization windows and reset figure references."""
-    #     if self.geom_fig:
-
-    #         self.geom_fig = None
-    #     if self.mesh_fig:
-
-    #         self.mesh_fig = None
-    #     if self.nodal_values_fig:
-
-    #         self.nodal_values_fig = None
-    #     if self.element_values_fig:
-
-    #         self.element_values_fig = None
